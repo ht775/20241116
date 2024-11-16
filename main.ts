@@ -1,7 +1,6 @@
 let a = 0
 let b = 0
 function choose2 () {
-    huskylens.request()
     if (huskylens.isAppear(1, HUSKYLENSResultType_t.HUSKYLENSResultBlock)) {
         basic.showNumber(0)
     } else if (huskylens.isAppear(2, HUSKYLENSResultType_t.HUSKYLENSResultBlock)) {
@@ -29,6 +28,7 @@ function choose2 () {
             # . . . #
             `)
     }
+    huskylens.request()
 }
 makerbit.onIrButton(IrButton.NUM1, IrButtonAction.Pressed, function () {
     a = 1
@@ -59,10 +59,10 @@ makerbit.onIrButton(IrButton.NUM2, IrButtonAction.Pressed, function () {
 })
 makerbit.onIrButton(IrButton.NUM6, IrButtonAction.Pressed, function () {
     a = 6
+    basic.showNumber(0)
 })
 makerbit.onIrButton(IrButton.NUM5, IrButtonAction.Pressed, function () {
     a = 5
-    basic.showNumber(0)
 })
 makerbit.onIrButton(IrButton.NUM4, IrButtonAction.Pressed, function () {
     a = 4
