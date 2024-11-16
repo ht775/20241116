@@ -54,7 +54,6 @@ makerbit.onIrButton(IrButton.NUM3, IrButtonAction.Pressed, function () {
 })
 makerbit.onIrButton(IrButton.NUM2, IrButtonAction.Pressed, function () {
     a = 2
-    basic.showNumber(0)
 })
 makerbit.onIrButton(IrButton.NUM6, IrButtonAction.Pressed, function () {
     a = 6
