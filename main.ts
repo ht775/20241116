@@ -1,3 +1,5 @@
+let a = 0
+let b = 0
 function choose2 () {
     huskylens.request()
     if (huskylens.isAppear(1, HUSKYLENSResultType_t.HUSKYLENSResultBlock)) {
@@ -35,16 +37,16 @@ function walk () {
     b = 100
     makerbit.connectIrReceiver(DigitalPin.P8)
     while (true) {
-        if (mbit_小車類.Line_Sensor(mbit_小車類.enPos.LeftState, mbit_小車類.enLineState.White) && mbit_小車類.Line_Sensor(mbit_小車類.enPos.RightState, mbit_小車類.enLineState.White)) {
+        if (mbit_小車類.Line_Sensor(mbit_小車類.enPos.LeftState, mbit_小車類.enLineState.White) && mbit_小車類.Line_Sensor(mbit_小車類.enPos.LeftState, mbit_小車類.enLineState.White)) {
             mbit_小車類.CarCtrlSpeed(mbit_小車類.CarState.Car_Run, b)
         }
-        if (mbit_小車類.Line_Sensor(mbit_小車類.enPos.LeftState, mbit_小車類.enLineState.White) && mbit_小車類.Line_Sensor(mbit_小車類.enPos.RightState, mbit_小車類.enLineState.White)) {
+        if (mbit_小車類.Line_Sensor(mbit_小車類.enPos.LeftState, mbit_小車類.enLineState.White) && mbit_小車類.Line_Sensor(mbit_小車類.enPos.LeftState, mbit_小車類.enLineState.White)) {
             mbit_小車類.CarCtrlSpeed(mbit_小車類.CarState.Car_Run, b)
         }
-        if (mbit_小車類.Line_Sensor(mbit_小車類.enPos.LeftState, mbit_小車類.enLineState.White) && mbit_小車類.Line_Sensor(mbit_小車類.enPos.RightState, mbit_小車類.enLineState.White)) {
+        if (mbit_小車類.Line_Sensor(mbit_小車類.enPos.LeftState, mbit_小車類.enLineState.White) && mbit_小車類.Line_Sensor(mbit_小車類.enPos.LeftState, mbit_小車類.enLineState.White)) {
             mbit_小車類.CarCtrlSpeed(mbit_小車類.CarState.Car_Run, 70)
         }
-        if (mbit_小車類.Line_Sensor(mbit_小車類.enPos.LeftState, mbit_小車類.enLineState.White) && mbit_小車類.Line_Sensor(mbit_小車類.enPos.RightState, mbit_小車類.enLineState.White)) {
+        if (mbit_小車類.Line_Sensor(mbit_小車類.enPos.LeftState, mbit_小車類.enLineState.White) && mbit_小車類.Line_Sensor(mbit_小車類.enPos.LeftState, mbit_小車類.enLineState.White)) {
             mbit_小車類.CarCtrlSpeed(mbit_小車類.CarState.Car_Run, 70)
         }
     }
@@ -60,15 +62,11 @@ makerbit.onIrButton(IrButton.NUM6, IrButtonAction.Pressed, function () {
 })
 makerbit.onIrButton(IrButton.NUM5, IrButtonAction.Pressed, function () {
     a = 5
+    basic.showNumber(0)
 })
 makerbit.onIrButton(IrButton.NUM4, IrButtonAction.Pressed, function () {
     a = 4
 })
-let b = 0
-let a = 0
-huskylens.initI2c()
-makerbit.connectIrReceiver(DigitalPin.P8)
-a = 0
 basic.forever(function () {
     if (a == 1) {
         walk()
